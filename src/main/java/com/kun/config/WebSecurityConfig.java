@@ -36,6 +36,7 @@ public class WebSecurityConfig {
                                 //具有USER_LIST权限的用户可以访问/user/list
                                 .requestMatchers("/user/list").hasAuthority("USER_LIST")
                                 //具有USER_ADD权限的用户可以访问/user/add
+                                .requestMatchers("user/update").hasAuthority("USER_LIST")
                                 .requestMatchers("/user/add").hasAuthority("USER_ADD")
                                 //根据角色授权
                                 .requestMatchers("/user/**").hasRole("ADMIN")
